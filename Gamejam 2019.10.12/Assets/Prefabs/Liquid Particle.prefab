@@ -26,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2510344658574490381}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 10, y: 10, z: 1}
   m_Children:
@@ -97,7 +97,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 50
+  m_Constraints: 56
   m_CollisionDetection: 0
 --- !u!114 &2510344658574490416
 MonoBehaviour:
@@ -111,8 +111,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e6b1d9620f464b48a40e20dc0d546b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WallCollider: {fileID: 2510344659883952552}
-  ParticleCollider: {fileID: 2510344658699204773}
 --- !u!1 &2510344658699204772
 GameObject:
   m_ObjectHideFlags: 0
