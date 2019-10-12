@@ -5,18 +5,28 @@ using UnityEngine;
 public class cameraMovement : MonoBehaviour
 {
 
-    public float rotationSpeed = 5.0f;
+    public float cameraSpeed = 0.2f;
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (Input.GetKey(KeyCode.D))
         {
-            transform.Rotate(0.0f, rotationSpeed, 0.0f);
+            transform.position += new Vector3(cameraSpeed, 0, 0);
         }
         if (Input.GetKey(KeyCode.A))
         {
-            transform.Rotate(0.0f, -rotationSpeed, 0.0f);
+            transform.position += new Vector3(-cameraSpeed, 0, 0);
+        }
+
+        if (transform.position.x > 12.5)
+        {
+            transform.position -= new Vector3(25, 0, 0);
+        }
+        else if (transform.position.x < -12.5)
+        {
+            transform.position += new Vector3(25, 0, 0);
         }
     }
+
 }
