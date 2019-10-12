@@ -1,9 +1,9 @@
 fileFormatVersion: 2
-guid: 2415c14b5c7abf04ab2c1411fde7bcef
+guid: 8349ab31da4ee364db64dbc5b84eaa3a
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Blender_0
-    21300002: Blender_1
+    21300000: Blender 1_0
+    21300002: Blender 1_1
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -86,7 +86,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Blender_0
+      name: Blender 1_0
       rect:
         serializedVersion: 2
         x: 20
@@ -100,13 +100,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fbcb06ec5c344164dad2a11069763080
+      spriteID: 874678a79ad4b954ab0c4c072cb1eb0a
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Blender_1
+      name: Blender 1_1
       rect:
         serializedVersion: 2
         x: 21
@@ -120,7 +120,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8d2bbd079ad68cb4c99e5b41e48e0b2f
+      spriteID: 192eee26b12f28840b7484064e2cbca5
       vertices: []
       indices: 
       edges: []
@@ -128,7 +128,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 3852371486b1c8a46bfc3a19a358037e
+    spriteID: dba44eb14454b66429091ff477201678
     vertices: []
     indices: 
     edges: []
