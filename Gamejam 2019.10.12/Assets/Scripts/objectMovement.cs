@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class objectMovement : MonoBehaviour
 {
+    // Property, because this should not be set in the Unity inspector; it will be set by `SceneContainer`
+    public SceneContainer Container { get; set; }
+
     public float backgroundWidth = 25;
 
     private Rigidbody2D rb;
@@ -29,11 +32,13 @@ public class objectMovement : MonoBehaviour
             deltaTime = 0;
         }
 
-        if (transform.position.x > backgroundWidth/2)
+        float backgroundRightEdgeX = backgroundWidth / 2 + Container.transform.position.x;
+        float backgroundLeftEdgeX = -backgroundWidth / 2 + Container.transform.position.x;
+        if (transform.position.x > backgroundRightEdgeX)
         {
             transform.position = transform.position + new Vector3(-backgroundWidth, 0, 0);
         }
-        else if (transform.position.x < -backgroundWidth/2) 
+        else if (transform.position.x < backgroundLeftEdgeX)
         {
             transform.position = transform.position + new Vector3(backgroundWidth, 0, 0);
         }
