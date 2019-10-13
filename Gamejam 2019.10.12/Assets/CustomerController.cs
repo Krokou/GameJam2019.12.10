@@ -7,7 +7,13 @@ public class CustomerController : MonoBehaviour
     public float diffForOK, diffForGood, diffForPerfect;
     public GameContoller controller;
     public float timeAliveBeforeSuddenSmoothieDeath;
-    private Color customerColor;
+    public Color customerColor;
+    public SpriteRenderer sweater;
+
+    private void Start()
+    {
+        sweater.color = customerColor;
+    }
     bool colorIsCloseEnough(Color color1, Color color2, float diff)
     {
         if(
@@ -38,8 +44,7 @@ public class CustomerController : MonoBehaviour
         {
             controller.addPoints(-10);
         }
-        controller.makeNewCustomer();
-        Destroy(this.gameObject);
+        controller.customerLeave(this);
     }
 
     public void Die()

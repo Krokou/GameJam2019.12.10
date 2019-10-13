@@ -6,6 +6,7 @@ TagManager:
   tags:
   - rightTrigger
   - leftTrigger
+  - Lid
   layers:
   - Default
   - TransparentFX
