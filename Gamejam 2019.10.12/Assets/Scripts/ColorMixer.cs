@@ -12,7 +12,7 @@ public class ColorMixer : MonoBehaviour
         public float weight;
     }
 
-    public List<Fluid> colors;
+    private List<Fluid> colors = new List<Fluid>();
     public SpriteRenderer[] sprites;
     private Color oldColor, mixedColor;
     private float deltaBlendTime = 1f, blendStartTime = 0f, totalWeight;
@@ -29,7 +29,6 @@ public class ColorMixer : MonoBehaviour
         mixedColor = mixColors(colors);
         blendStartTime = Time.time;
         deltaBlendTime = 1;
-        oldColor = Color.green;
     }
 
     // Update is called once per frame
@@ -40,6 +39,7 @@ public class ColorMixer : MonoBehaviour
 
     public void addColor(Color color, float weight, float time = 0f)
     {
+        oldColor = mixedColor != null ? mixedColor : color;
         totalWeight += weight;
         colorChanged = true;
         Fluid a = new Fluid();
@@ -48,6 +48,8 @@ public class ColorMixer : MonoBehaviour
         colors.Add(a);
         deltaBlendTime = time;
         blendStartTime = Time.time;
+
+        
         mixedColor = mixColors(colors);
         oldColor = mixedColor;
        
@@ -60,7 +62,6 @@ public class ColorMixer : MonoBehaviour
             {
                 foreach(SpriteRenderer sprite in sprites)
                 {
-                    print("Hei");
                     sprite.color = new Color(
                         oldColor.r * (deltaBlendTime + blendStartTime - Time.time) / deltaBlendTime + mixedColor.r * (Time.time - blendStartTime) / deltaBlendTime,
                         oldColor.g * (deltaBlendTime + blendStartTime - Time.time) / deltaBlendTime + mixedColor.g * (Time.time - blendStartTime) / deltaBlendTime,

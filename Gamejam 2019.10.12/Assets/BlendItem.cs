@@ -6,7 +6,7 @@ public class BlendItem : MonoBehaviour
 {
     // Start is called before the first frame update
     public Color blendedColor;
-    public float blendIntensity;
+    public float blendIntensity, fillAmmount;
     public bool IsBeingBlended, IsPickedUp;
     void Start()
     {
