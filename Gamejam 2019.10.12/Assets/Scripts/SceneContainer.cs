@@ -6,7 +6,7 @@ public class SceneContainer : MonoBehaviour
 {
     void Awake()
     {
-        foreach (objectMovement sceneObject in GetComponentsInChildren<objectMovement>())
+        foreach (SceneObjectMovement sceneObject in GetComponentsInChildren<SceneObjectMovement>())
         {
             sceneObject.Container = this;
         }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class objectMovement : MonoBehaviour
+public class SceneObjectMovement : MonoBehaviour
 {
     // Property, because this should not be set in the Unity inspector; it will be set by `SceneContainer`
     public SceneContainer Container { get; set; }
@@ -19,7 +19,7 @@ public class objectMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        rb.AddForce(new Vector2(Random.Range(-1000.0f,1000.0f), 0.0f));
+        rb.AddForce(new Vector2(Random.Range(-1000.0f, 1000.0f), 0.0f));
     }
 
     void FixedUpdate()
@@ -36,17 +36,19 @@ public class objectMovement : MonoBehaviour
         float backgroundLeftEdgeX = -backgroundWidth / 2 + Container.transform.position.x;
         if (transform.position.x > backgroundRightEdgeX)
         {
-            transform.position = transform.position + new Vector3(-backgroundWidth, 0, 0);
+            transform.position += new Vector3(-backgroundWidth, 0, 0);
         }
         else if (transform.position.x < backgroundLeftEdgeX)
         {
-            transform.position = transform.position + new Vector3(backgroundWidth, 0, 0);
+            transform.position += new Vector3(backgroundWidth, 0, 0);
         }
 
-        leftClone.transform.rotation = transform.rotation;
-        rightClone.transform.rotation = transform.rotation;
+        Quaternion rotation = transform.rotation;
+        leftClone.transform.rotation = rotation;
+        rightClone.transform.rotation = rotation;
 
-        leftClone.transform.position = transform.position + new Vector3(-backgroundWidth, 0, 0);
-        rightClone.transform.position = transform.position + new Vector3(backgroundWidth, 0, 0);
+        Vector3 position = transform.position;
+        leftClone.transform.position = position + new Vector3(-backgroundWidth, 0, 0);
+        rightClone.transform.position = position + new Vector3(backgroundWidth, 0, 0);
     }
 }

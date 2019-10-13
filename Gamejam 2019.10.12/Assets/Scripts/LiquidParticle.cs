@@ -15,8 +15,4 @@ public class LiquidParticle : MonoBehaviour
             hasConfiguredPhysics = true;
         }
     }
-
-    void Start() {}
-
-    void Update() {}
 }

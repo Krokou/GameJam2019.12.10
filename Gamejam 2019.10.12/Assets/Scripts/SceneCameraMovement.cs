@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class cameraMovement : MonoBehaviour
+public class SceneCameraMovement : MonoBehaviour
 {
     public float backgroundWidth = 25;
     public float cameraSpeed = 0.2f;
