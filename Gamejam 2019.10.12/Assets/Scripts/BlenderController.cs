@@ -55,7 +55,7 @@ public class BlenderController : MonoBehaviour
         //controller.currentCust().giveCustomerSmoothie(mixer.empty());
         lidPrefab.transform.position = this.transform.position + new Vector3(0, launchX, 0);
         lidPrefab.SetActive(true);
-        lidPrefab.GetComponent<Rigidbody2D>().angularVelocity = 72000;
+        lidPrefab.GetComponent<Rigidbody2D>().angularVelocity = 720;
         lidPrefab.GetComponent<Rigidbody2D>().velocity = new Vector2(Random.Range(-5, 5), 5);
         
         lid.SetActive(false);

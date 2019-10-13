@@ -1,5 +1,22 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &2102677356775362890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6090748751632649591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bae402f92d6290a4d809c82322269a03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blendedColor: {r: 0, g: 0, b: 0, a: 0}
+  blendIntensity: 0
+  fillAmmount: 0
+  IsBeingBlended: 0
+  IsPickedUp: 0
 --- !u!1001 &2683154024501295280
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40,3 +57,9 @@ PrefabInstance:
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 584b9066c2665314497b3e05587fc73e, type: 3}
+--- !u!1 &6090748751632649591 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8195097658478097863, guid: 584b9066c2665314497b3e05587fc73e,
+    type: 3}
+  m_PrefabInstance: {fileID: 2683154024501295280}
+  m_PrefabAsset: {fileID: 0}
