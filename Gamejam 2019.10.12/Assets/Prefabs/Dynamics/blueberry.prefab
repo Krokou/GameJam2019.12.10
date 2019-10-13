@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2580743111046793467}
   - component: {fileID: 2108515297784459350}
   - component: {fileID: 5313192408031077700}
+  - component: {fileID: 5066115191706401823}
   m_Layer: 0
   m_Name: blueberry
   m_TagString: Untagged
@@ -118,3 +119,20 @@ CircleCollider2D:
   m_Offset: {x: -0.03, y: -0.1}
   serializedVersion: 2
   m_Radius: 0.08
+--- !u!114 &5066115191706401823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1947894866258150952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bae402f92d6290a4d809c82322269a03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blendedColor: {r: 0, g: 0, b: 0, a: 0}
+  blendIntensity: 0
+  fillAmmount: 0
+  IsBeingBlended: 0
+  IsPickedUp: 0

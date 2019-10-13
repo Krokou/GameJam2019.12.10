@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8553823862905463582}
   - component: {fileID: 1893305208845870158}
   - component: {fileID: 3784649525058660013}
+  - component: {fileID: 8118133604635246501}
   m_Layer: 0
   m_Name: weed
   m_TagString: Untagged
@@ -118,3 +119,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &8118133604635246501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3318377769607838042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bae402f92d6290a4d809c82322269a03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blendedColor: {r: 0, g: 0, b: 0, a: 0}
+  blendIntensity: 0
+  fillAmmount: 0
+  IsBeingBlended: 0
+  IsPickedUp: 0
