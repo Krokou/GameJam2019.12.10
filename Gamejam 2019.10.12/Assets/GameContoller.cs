@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameContoller : MonoBehaviour
 {
     public int points = 0;
+    private List<CustomerController> customers = new List<CustomerController>();
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +18,7 @@ public class GameContoller : MonoBehaviour
 
     public void makeNewCustomer() {
 
-        Color newColor = new Color(Random.Range(0, 255), Random.Range(0, 255), Random.Range(0, 255);
+        Color newColor = new Color(Random.Range(0, 255), Random.Range(0, 255), Random.Range(0, 255));
 
     }
 }

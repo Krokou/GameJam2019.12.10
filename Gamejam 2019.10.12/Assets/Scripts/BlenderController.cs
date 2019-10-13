@@ -12,7 +12,15 @@ public class BlenderController : MonoBehaviour
         {
             blendItem(item);
         }
+        else if(collision.tag == "Lid")
+        {
+            putOnLid();
+        }
     }
+
+
+    public CustomerController currensCustomer;
+    public GameObject lid;
     public float max_fill = 100;
     public float current_ammount = 0, timePerPercentage;
 
@@ -20,10 +28,32 @@ public class BlenderController : MonoBehaviour
 
     public SpriteRenderer fillSprite;
     private ColorMixer mixer;
+    private float timeLidded = 0f, deltaLidTime = 0.5;
+    private bool lidded;
     // Start is called before the first frame update
     void Start()
     {
         this.mixer = GetComponent<ColorMixer>();
+    }
+
+    private void FixedUpdate()
+    {
+        if (this.lidded) {
+            if(this.timeLidded + deltaLidTime < Time.time)
+            {
+                unLid();
+            }
+        }
+    }
+    void unLid()
+    {
+        currensCustomer.giveCustomerSmoothie(mixer)
+    }
+    void putOnLid()
+    {
+        lid.gameObject.SetActive(true);
+        this.timeLidded = Time.time;
+        this.lidded = true;
     }
 
     void blendItem(BlendItem blenditem)
