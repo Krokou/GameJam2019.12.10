@@ -12,13 +12,13 @@ public class BlenderController : MonoBehaviour
     public float launchX;
     public float current_ammount = 0, timePerPercentage;
 
-    public float max_y_coordinates, min_y_coordinates;
+    public float max_y_coordinates, min_y_coordinates; //  for spriten som fyller opp blenderen
 
     public SpriteRenderer fillSprite;
     private ColorMixer mixer;
     private float timeLidded = 0f, deltaLidTime = 0.5f;
     private bool lidded;
-    public GameObject lidPrefab;
+    public GameObject lidPrefab; //for lokket som plukkes opp
     // Start is called before the first frame update
     void Start()
     {
@@ -52,12 +52,14 @@ public class BlenderController : MonoBehaviour
     }
     void unLid()
     {
+        //HER FUCKER LOKKET SEG OPP
+
+
         //controller.currentCust().giveCustomerSmoothie(mixer.empty());
         lidPrefab.transform.position = this.transform.position + new Vector3(0, launchX, 0);
         lidPrefab.SetActive(true);
-        lidPrefab.GetComponent<Rigidbody2D>().angularVelocity = 720;
-        lidPrefab.GetComponent<Rigidbody2D>().velocity = new Vector2(Random.Range(-5, 5), 5);
-        
+        //lidPrefab.GetComponent<Rigidbody2D>().angularVelocity = 720;
+        //lidPrefab.GetComponent<Rigidbody2D>().velocity = new Vector2(Random.Range(-5, 5), 5);    
         lid.SetActive(false);
         lidded = false;
     }
@@ -71,11 +73,20 @@ public class BlenderController : MonoBehaviour
 
     void blendItem(BlendItem blenditem)
     {
-        print(mixer.name);
-        mixer.addColor(blenditem.blendedColor, blenditem.blendIntensity, blenditem.fillAmmount*timePerPercentage);
-        this.current_ammount += blenditem.fillAmmount;
-        this.fillSprite.transform.localPosition = new Vector3(0,(current_ammount * (max_y_coordinates - min_y_coordinates) / max_fill) + min_y_coordinates, 0);
-        Destroy(blenditem.gameObject);
+        if(blenditem.fillAmmount + this.current_ammount <= max_fill)
+        {
+            print(mixer.name);
+            mixer.addColor(blenditem.blendedColor, blenditem.blendIntensity, blenditem.fillAmmount * timePerPercentage);
+            this.current_ammount += blenditem.fillAmmount;
+            this.fillSprite.transform.localPosition = new Vector3(0, (current_ammount * (max_y_coordinates - min_y_coordinates) / max_fill) + min_y_coordinates, 0);
+            Destroy(blenditem.gameObject);
+        }
+        else
+        {
+            blenditem.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 1000));
+        }
+        
+
     }
     // Update is called once per frame
     void Update()
