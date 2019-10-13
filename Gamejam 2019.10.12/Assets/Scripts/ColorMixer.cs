@@ -54,6 +54,14 @@ public class ColorMixer : MonoBehaviour
         oldColor = mixedColor;
        
     }
+    public Color empty()
+    {
+        Color color = this.mixedColor;
+        this.mixedColor = Color.white;
+        this.colors.Clear();
+        colorChanged = false;
+        return color;
+    }
     void UpdateColor()
     {
         if (colorChanged)

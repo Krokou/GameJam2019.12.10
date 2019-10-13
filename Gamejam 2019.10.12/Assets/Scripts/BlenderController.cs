@@ -4,7 +4,15 @@ using UnityEngine;
 
 public class BlenderController : MonoBehaviour
 {
-    public BlendItem test;
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        print("Hei" + collision.name);
+        BlendItem item = collision.GetComponent<BlendItem>();
+        if(item != null)
+        {
+            blendItem(item);
+        }
+    }
     public float max_fill = 100;
     public float current_ammount = 0, timePerPercentage;
 
@@ -16,7 +24,6 @@ public class BlenderController : MonoBehaviour
     void Start()
     {
         this.mixer = GetComponent<ColorMixer>();
-        blendItem(test);
     }
 
     void blendItem(BlendItem blenditem)
@@ -25,7 +32,7 @@ public class BlenderController : MonoBehaviour
         mixer.addColor(blenditem.blendedColor, blenditem.blendIntensity, blenditem.fillAmmount*timePerPercentage);
         this.current_ammount += blenditem.fillAmmount;
         this.fillSprite.transform.localPosition = new Vector3(0,(current_ammount * (max_y_coordinates - min_y_coordinates) / max_fill) + min_y_coordinates, 0);
-        //Destroy(blenditem.gameObject);
+        Destroy(blenditem.gameObject);
     }
     // Update is called once per frame
     void Update()
