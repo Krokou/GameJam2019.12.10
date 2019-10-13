@@ -9,11 +9,14 @@ ModelImporter:
     2100002: material.001
     2100004: Cylinder material
     2100006: lambert1
+    2100008: No Name
     2300000: //RootNode
     3300000: //RootNode
     4300000: Cylinder
     4300002: Circle
     4300004: pCylinder1
+    4300006: 60 deg cylinder
+    4300008: 60 fov cylinder
   externalObjects: {}
   materials:
     importMaterials: 1
