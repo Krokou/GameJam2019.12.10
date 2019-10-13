@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class cameraMovement : MonoBehaviour
 {
-
+    public float backgroundWidth = 25;
     public float cameraSpeed = 0.2f;
 
     // Update is called once per frame
@@ -19,13 +19,13 @@ public class cameraMovement : MonoBehaviour
             transform.position += new Vector3(-cameraSpeed, 0, 0);
         }
 
-        if (transform.position.x > 12.5)
+        if (transform.position.x > backgroundWidth/2)
         {
-            transform.position -= new Vector3(25, 0, 0);
+            transform.position -= new Vector3(backgroundWidth, 0, 0);
         }
-        else if (transform.position.x < -12.5)
+        else if (transform.position.x < -backgroundWidth/2)
         {
-            transform.position += new Vector3(25, 0, 0);
+            transform.position += new Vector3(backgroundWidth, 0, 0);
         }
     }
 

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class objectMovement : MonoBehaviour
 {
+    public float backgroundWidth = 25;
+
     private Rigidbody2D rb;
 
     public int deltaTime = 0;
@@ -27,19 +29,19 @@ public class objectMovement : MonoBehaviour
             deltaTime = 0;
         }
 
-        if (transform.position.x > 12.5)
+        if (transform.position.x > backgroundWidth/2)
         {
-            transform.position = transform.position + new Vector3(-25, 0, 0);
+            transform.position = transform.position + new Vector3(-backgroundWidth, 0, 0);
         }
-        else if (transform.position.x < -12.5)
+        else if (transform.position.x < -backgroundWidth/2) 
         {
-            transform.position = transform.position + new Vector3(25, 0, 0);
+            transform.position = transform.position + new Vector3(backgroundWidth, 0, 0);
         }
 
         leftClone.transform.rotation = transform.rotation;
         rightClone.transform.rotation = transform.rotation;
 
-        leftClone.transform.position = transform.position + new Vector3(-25, 0, 0);
-        rightClone.transform.position = transform.position + new Vector3(25, 0, 0);
+        leftClone.transform.position = transform.position + new Vector3(-backgroundWidth, 0, 0);
+        rightClone.transform.position = transform.position + new Vector3(backgroundWidth, 0, 0);
     }
 }
