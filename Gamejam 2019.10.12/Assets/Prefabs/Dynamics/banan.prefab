@@ -105,6 +105,7 @@ GameObject:
   - component: {fileID: 3335761899134496119}
   - component: {fileID: 7693057576386366443}
   - component: {fileID: 6561879591458848440}
+  - component: {fileID: 5498022106054902415}
   m_Layer: 0
   m_Name: banan
   m_TagString: Untagged
@@ -197,3 +198,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &5498022106054902415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9044145907611077170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bae402f92d6290a4d809c82322269a03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blendedColor: {r: 0, g: 0, b: 0, a: 0}
+  blendIntensity: 0
+  fillAmmount: 0
+  IsBeingBlended: 0
+  IsPickedUp: 0
