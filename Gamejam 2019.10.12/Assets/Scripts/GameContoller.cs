@@ -86,6 +86,7 @@ public class GameContoller : MonoBehaviour
 
     public void customerLeave(CustomerController cust)
     {
+        addPoints(-10);
         customers.Remove(cust);
         cust.Die();
         foreach(CustomerController i in customers)
@@ -101,8 +102,7 @@ public class GameContoller : MonoBehaviour
         if (customers.Count > 0)
         {
             customers.Remove(cust);
-            
-            Destroy(cust);
+            cust.Die();
         }
         foreach (CustomerController i in customers)
         {

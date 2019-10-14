@@ -48,7 +48,6 @@ public class CustomerController : MonoBehaviour
 
     public void Die()
     {
-        controller.addPoints(-10);
         Destroy(gameObject);
     }
 
