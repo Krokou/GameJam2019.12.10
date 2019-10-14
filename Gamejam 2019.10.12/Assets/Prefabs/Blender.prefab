@@ -74,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 8349ab31da4ee364db64dbc5b84eaa3a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -168,7 +168,8 @@ MonoBehaviour:
   max_y_coordinates: 0
   min_y_coordinates: -0.25
   fillSprite: {fileID: 3136944594254835243}
-  lidPrefab: {fileID: 0}
+  lidPrefab: {fileID: 7791471828213441299, guid: e65075c619dcffd4eb581e1dea77b9f0,
+    type: 3}
 --- !u!60 &8425527720173120328
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -178,7 +179,7 @@ PolygonCollider2D:
   m_GameObject: {fileID: 5812544951634615680}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: dcd83994db5f22045b45997ccbc9a7ee, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0

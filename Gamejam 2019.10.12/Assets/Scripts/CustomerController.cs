@@ -6,7 +6,6 @@ public class CustomerController : MonoBehaviour
 {
     public float diffForOK, diffForGood, diffForPerfect;
     public GameContoller controller;
-    public float timeAliveBeforeSuddenSmoothieDeath;
     public Color customerColor;
     public SpriteRenderer sweater;
 
@@ -50,7 +49,6 @@ public class CustomerController : MonoBehaviour
     public void Die()
     {
         controller.addPoints(-10);
-        controller.makeNewCustomer();
         Destroy(gameObject);
     }
 
