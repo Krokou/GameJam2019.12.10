@@ -7,17 +7,19 @@ public class SceneObjectMovement : MonoBehaviour
     // Property, because this should not be set in the Unity inspector; it will be set by `SceneContainer`
     public SceneContainer Container { get; set; }
 
-    public float backgroundWidth = 25;
+    public GameObject leftClone;
+    public GameObject rightClone;
+
+    private float backgroundWidth;
 
     private Rigidbody2D rb;
 
-    public int deltaTime = 0;
-
-    public GameObject rightClone;
-    public GameObject leftClone;
+    private int deltaTime = 0;
 
     void Start()
     {
+        backgroundWidth = GameContoller.INSTANCE.background.width;
+
         rb = GetComponent<Rigidbody2D>();
         rb.AddForce(new Vector2(Random.Range(-1000.0f, 1000.0f), 0.0f));
     }
@@ -32,15 +34,15 @@ public class SceneObjectMovement : MonoBehaviour
             deltaTime = 0;
         }
 
-        float backgroundRightEdgeX = backgroundWidth / 2 + Container.transform.position.x;
         float backgroundLeftEdgeX = -backgroundWidth / 2 + Container.transform.position.x;
-        if (transform.position.x > backgroundRightEdgeX)
-        {
-            transform.position += new Vector3(-backgroundWidth, 0, 0);
-        }
-        else if (transform.position.x < backgroundLeftEdgeX)
+        float backgroundRightEdgeX = backgroundWidth / 2 + Container.transform.position.x;
+        if (transform.position.x < backgroundLeftEdgeX)
         {
             transform.position += new Vector3(backgroundWidth, 0, 0);
+        }
+        else if (transform.position.x > backgroundRightEdgeX)
+        {
+            transform.position += new Vector3(-backgroundWidth, 0, 0);
         }
 
         Quaternion rotation = transform.rotation;

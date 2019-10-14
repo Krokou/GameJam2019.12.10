@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class GameContoller : MonoBehaviour
 {
+    public static GameContoller INSTANCE;
+
+    public SceneBackground background;
+    public GameObject blendItemContainer;
+
     public int points = 0;
     public GameObject customerPrefab;
     private List<CustomerController> customers = new List<CustomerController>();
@@ -12,10 +17,23 @@ public class GameContoller : MonoBehaviour
     private float lastSpawn = 0f;
     public Vector3 lineIncrements;
     public Vector3 spawnPoint;
-    // Start is called before the first frame update
+
+    void Awake()
+    {
+        if (INSTANCE == null)
+        {
+            INSTANCE = this;
+        } else if (INSTANCE != this)
+        {
+            Debug.LogWarning("There's more than one GameContoller in the scene!");
+            Destroy(gameObject);
+        }
+    }
+
     void Start()
     {
     }
+
     private void FixedUpdate()
     {
         if(spawnTime + lastSpawn < Time.time)
