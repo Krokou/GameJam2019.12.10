@@ -107,7 +107,12 @@ public class handController : MonoBehaviour
     public void OnTriggerStay2D(Collider2D collision)
     {
         BlendItem item = collision.GetComponent<BlendItem>();
-        if (item != null)
+        if (collision.transform.parent != null)
+        {
+            item = collision.GetComponentInParent<BlendItem>();
+        }
+
+        if (item != null || collision.tag == "Lid")
         {
             if (Input.GetMouseButtonDown(0))
             {
@@ -115,6 +120,10 @@ public class handController : MonoBehaviour
                 rightClone.GetComponent<SpriteRenderer>().sprite = sprite2;
                 leftClone.GetComponent<SpriteRenderer>().sprite = sprite2;
                 rb = collision.GetComponent<Rigidbody2D>();
+                if (collision.transform.parent != null)
+                {
+                    rb = collision.GetComponentInParent<Rigidbody2D>();
+                }
             }
         }
     }
@@ -128,6 +137,14 @@ public class handController : MonoBehaviour
         if (disLen > 4) result = false;
 
         return result;
+    }
+
+    public void Release()
+    {
+        rb = null;
+        GetComponent<SpriteRenderer>().sprite = sprite1;
+        rightClone.GetComponent<SpriteRenderer>().sprite = sprite1;
+        leftClone.GetComponent<SpriteRenderer>().sprite = sprite1;
     }
     
 }

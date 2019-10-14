@@ -41,23 +41,6 @@ public class GameContoller : MonoBehaviour
     {
         makeNewCustomer();
         timeStart = Time.time;
-
-        List<int> ints = new List<int>(11);
-        ints.Add(1);
-        ints.Add(2);
-        ints.Add(3);
-        ints.Add(4);
-        ints.Add(5);
-        ints.Add(6);
-        ints.Add(7);
-        print(ints[0]);
-        ints.Remove(1);
-        print(ints[0]);
-        foreach (int i in ints)
-        {
-            print(i);
-        }
-
     }
 
     private void FixedUpdate()
@@ -110,11 +93,23 @@ public class GameContoller : MonoBehaviour
             print(i);
             i.transform.position -= lineIncrements;
         }
+        timeStart = Time.time;
     }
 
     public void customerPays(CustomerController cust)
     {
-
+        if (customers.Count > 0)
+        {
+            customers.Remove(cust);
+            
+            Destroy(cust);
+        }
+        foreach (CustomerController i in customers)
+        {
+            print(i);
+            i.transform.position -= lineIncrements;
+        }
+        timeStart = Time.time;
     }
 
     public CustomerController currentCust()

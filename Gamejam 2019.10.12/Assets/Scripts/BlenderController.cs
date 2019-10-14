@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class BlenderController : MonoBehaviour
 {
-  
 
+    public handController hand;
     public GameContoller controller;
     public GameObject lid;
     public float max_fill = 100;
@@ -18,17 +18,17 @@ public class BlenderController : MonoBehaviour
     private ColorMixer mixer;
     private float timeLidded = 0f, deltaLidTime = 0.5f;
     private bool lidded;
-    public GameObject lidPrefab; //for lokket som plukkes opp
-    // Start is called before the first frame update
+    public GameObject lidPrefab; 
+    
     void Start()
     {
-        this.mixer = GetComponent<ColorMixer>();
+        mixer = GetComponent<ColorMixer>();
     }
 
     private void FixedUpdate()
     {
-        if (this.lidded) {
-            if(this.timeLidded + deltaLidTime < Time.time)
+        if (lidded) {
+            if(timeLidded + deltaLidTime < Time.time)
             {
                 unLid();
             }
@@ -38,28 +38,40 @@ public class BlenderController : MonoBehaviour
     {
         print("Hei" + collision.name);
         BlendItem item = collision.GetComponent<BlendItem>();
+        if (collision.transform.parent != null)
+        {
+            item = collision.GetComponentInParent<BlendItem>();
+        }
         if (item != null)
         {
             blendItem(item);
+            hand.Release();
         }
-        else if (collision.tag == "Lid")
+        else if (collision.tag == "Lid" && timeLidded + 2.5f < Time.time && current_ammount != 0)
         {
-            this.lidPrefab = collision.gameObject;
+            lidPrefab = collision.gameObject;
             lidPrefab.SetActive(false);
             putOnLid();
-            
+            hand.Release();
         }
     }
     void unLid()
     {
-        //HER FUCKER LOKKET SEG OPP
+        if (controller.currentCust() != null)
+        {
+            current_ammount = 0;
+            controller.currentCust().giveCustomerSmoothie(mixer.empty());
+            mixer.empty();
+            fillSprite.transform.localPosition = new Vector3(0, (current_ammount * (max_y_coordinates - min_y_coordinates) / max_fill) + min_y_coordinates, 0);
+        }
 
-
-        //controller.currentCust().giveCustomerSmoothie(mixer.empty());
-        lidPrefab.transform.position = this.transform.position + new Vector3(0, launchX, 0);
+        int launchDir = ((int)(Random.value * 2) * 2) - 1;
         lidPrefab.SetActive(true);
-        //lidPrefab.GetComponent<Rigidbody2D>().angularVelocity = 720;
-        //lidPrefab.GetComponent<Rigidbody2D>().velocity = new Vector2(Random.Range(-5, 5), 5);    
+        lidPrefab.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
+        lidPrefab.transform.position = lid.transform.position;
+        lidPrefab.GetComponent<Rigidbody2D>().AddForce(new Vector3(launchDir*1000, 200, 0));
+
+        
         lid.SetActive(false);
         lidded = false;
     }
@@ -67,18 +79,18 @@ public class BlenderController : MonoBehaviour
     {
         print("LIDON!");
         lid.gameObject.SetActive(true);
-        this.timeLidded = Time.time;
-        this.lidded = true;
+        timeLidded = Time.time;
+        lidded = true;
     }
 
     void blendItem(BlendItem blenditem)
     {
-        if(blenditem.fillAmmount + this.current_ammount <= max_fill)
+        if(blenditem.fillAmmount + current_ammount <= max_fill)
         {
             print(mixer.name);
             mixer.addColor(blenditem.blendedColor, blenditem.blendIntensity, blenditem.fillAmmount * timePerPercentage);
-            this.current_ammount += blenditem.fillAmmount;
-            this.fillSprite.transform.localPosition = new Vector3(0, (current_ammount * (max_y_coordinates - min_y_coordinates) / max_fill) + min_y_coordinates, 0);
+            current_ammount += blenditem.fillAmmount;
+            fillSprite.transform.localPosition = new Vector3(0, (current_ammount * (max_y_coordinates - min_y_coordinates) / max_fill) + min_y_coordinates, 0);
             Destroy(blenditem.gameObject);
         }
         else

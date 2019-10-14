@@ -58,6 +58,7 @@ MonoBehaviour:
   - {fileID: 7615959232147222387, guid: 355930fcee0e54e45ac9c63ed13daf46, type: 3}
   milk: {fileID: 2099390372722945322, guid: 2dfbcd0d21894234281f163473e38ed9, type: 3}
   weed: {fileID: 8118133604635246501, guid: 7accf079fe6cf8a46b5ddefef64dde19, type: 3}
+  hand: {fileID: 0}
   moneyItems:
   - {fileID: 8857351890593900117, guid: 795c643ffc1f8c649826c57357a4d949, type: 3}
   - {fileID: 3102030326160061607, guid: 6f2069dd5cc3b0a47a98a1bfae8fe7ec, type: 3}
@@ -66,10 +67,10 @@ MonoBehaviour:
   customerPrefab: {fileID: 2027946884911940649, guid: ff806afdb7bbf56419f8cfeebfd2a885,
     type: 3}
   sweaterColor: {r: 0, g: 0, b: 0, a: 0}
-  spawnTime: 1
+  spawnTime: 2
   bounceValue: 0
-  lineIncrements: {x: -4, y: 0, z: 0}
-  spawnPoint: {x: -8.87, y: 9.92, z: -9}
+  lineIncrements: {x: -3, y: 0, z: 0}
+  spawnPoint: {x: -5, y: 9.92, z: -9}
   lifespan: 30
 --- !u!82 &1827585723273299849
 AudioSource:

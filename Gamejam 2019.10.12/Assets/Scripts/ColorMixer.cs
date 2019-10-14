@@ -59,7 +59,17 @@ public class ColorMixer : MonoBehaviour
         Color color = this.mixedColor;
         this.mixedColor = Color.white;
         this.colors.Clear();
-        colorChanged = false;
+        colorChanged = true;
+
+        totalWeight = 0f;
+        foreach (Fluid c in colors)
+        {
+            totalWeight += c.weight;
+        }
+        mixedColor = mixColors(colors);
+        blendStartTime = Time.time;
+        deltaBlendTime = 1;
+
         return color;
     }
     void UpdateColor()
@@ -84,7 +94,6 @@ public class ColorMixer : MonoBehaviour
                     sprite.color = mixedColor;
                     colorChanged = false;
                 }
-
             }
         }   
     }
