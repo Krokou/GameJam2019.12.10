@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class SceneObjectMovement : MonoBehaviour
 {
-    // Property, because this should not be set in the Unity inspector; it will be set by `SceneContainer`
-    public SceneContainer Container { get; set; }
-
     public GameObject leftClone;
     public GameObject rightClone;
 
+    private Transform container;
     private float backgroundWidth;
 
     private Rigidbody2D rb;
@@ -18,6 +16,7 @@ public class SceneObjectMovement : MonoBehaviour
 
     void Start()
     {
+        container = GameContoller.INSTANCE._2DScene.transform;
         backgroundWidth = GameContoller.INSTANCE.background.width;
 
         rb = GetComponent<Rigidbody2D>();
@@ -34,8 +33,8 @@ public class SceneObjectMovement : MonoBehaviour
             deltaTime = 0;
         }
 
-        float backgroundLeftEdgeX = -backgroundWidth / 2 + Container.transform.position.x;
-        float backgroundRightEdgeX = backgroundWidth / 2 + Container.transform.position.x;
+        float backgroundLeftEdgeX = -backgroundWidth / 2 + container.position.x;
+        float backgroundRightEdgeX = backgroundWidth / 2 + container.position.x;
         if (transform.position.x < backgroundLeftEdgeX)
         {
             transform.position += new Vector3(backgroundWidth, 0, 0);

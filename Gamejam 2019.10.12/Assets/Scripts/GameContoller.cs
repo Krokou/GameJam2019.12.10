@@ -6,8 +6,9 @@ public class GameContoller : MonoBehaviour
 {
     public static GameContoller INSTANCE;
 
+    public Transform _2DScene;
     public SceneBackground background;
-    public GameObject blendItemContainer;
+    public Transform blendItemContainer;
 
     public int points = 0;
     public GameObject customerPrefab;
