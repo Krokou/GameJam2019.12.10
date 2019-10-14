@@ -39,7 +39,7 @@ public class Deliverer : MonoBehaviour
                     if (Utils.ThrowDice(weedChance))
                         itemsToSpawn = Utils.CreateFilledArray(numItemsValue, GameContoller.INSTANCE.weed);
                     else
-                        itemsToSpawn = GetRandomGroceries(numItemsValue);
+                        itemsToSpawn = Utils.GetRandomArray(numItemsValue, GameContoller.INSTANCE.groceries);
                     break;
 
                 case DeliveryType.MILK:
@@ -58,19 +58,5 @@ public class Deliverer : MonoBehaviour
 
             Destroy(blendItem.gameObject);
         }
-    }
-
-    private static BlendItem[] GetRandomGroceries(int num)
-    {
-        BlendItem[] groceries = GameContoller.INSTANCE.groceries;
-
-        BlendItem[] randomGroceries = new BlendItem[num];
-        for (int i = 0; i < randomGroceries.Length; i++)
-        {
-            int randomIndex = (int) (Random.value * groceries.Length);
-            randomGroceries[i] = groceries[randomIndex];
-        }
-
-        return randomGroceries;
     }
 }

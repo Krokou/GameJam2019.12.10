@@ -13,6 +13,18 @@ public class Utils
         return array;
     }
 
+    public static T[] GetRandomArray<T>(int num, T[] sourceElements)
+    {
+        T[] randomElements = new T[num];
+        for (int i = 0; i < randomElements.Length; i++)
+        {
+            int randomIndex = (int) (Random.value * sourceElements.Length);
+            randomElements[i] = sourceElements[randomIndex];
+        }
+
+        return randomElements;
+    }
+
     public static Vector2 RandomVector(float minMagnitude, float maxMagnitude)
     {
         return Random.onUnitSphere * Random.Range(minMagnitude, maxMagnitude);

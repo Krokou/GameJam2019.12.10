@@ -58,6 +58,10 @@ MonoBehaviour:
   - {fileID: 7615959232147222387, guid: 355930fcee0e54e45ac9c63ed13daf46, type: 3}
   milk: {fileID: 2099390372722945322, guid: 2dfbcd0d21894234281f163473e38ed9, type: 3}
   weed: {fileID: 8118133604635246501, guid: 7accf079fe6cf8a46b5ddefef64dde19, type: 3}
+  moneyItems:
+  - {fileID: 8857351890593900117, guid: 795c643ffc1f8c649826c57357a4d949, type: 3}
+  - {fileID: 3102030326160061607, guid: 6f2069dd5cc3b0a47a98a1bfae8fe7ec, type: 3}
+  - {fileID: 8186268509020207352, guid: d29dba42400d75242bc4b271a7606bb7, type: 3}
   points: 0
   customerPrefab: {fileID: 2027946884911940649, guid: ff806afdb7bbf56419f8cfeebfd2a885,
     type: 3}

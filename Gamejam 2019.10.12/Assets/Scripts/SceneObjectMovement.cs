@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class SceneObjectMovement : MonoBehaviour
 {
@@ -53,20 +55,20 @@ public class SceneObjectMovement : MonoBehaviour
         rightClone.transform.position = position + new Vector3(backgroundWidth, 0, 0);
     }
 
-    public static BlendItem InstantiateAsSceneObject(BlendItem item, Vector3 spawnPosition)
+    public static T InstantiateAsSceneObject<T>(T item, Vector3 spawnPosition) where T : MonoBehaviour
     {
         Transform blendItemContainer = GameContoller.INSTANCE.blendItemContainer;
         float backgroundWidth = GameContoller.INSTANCE.background.width;
 
-        BlendItem spawnedItem = Instantiate(item, spawnPosition, Quaternion.identity);
+        T spawnedItem = Instantiate(item, spawnPosition, Quaternion.identity);
 
         Transform parentObject = new GameObject(item.name).transform;
         parentObject.position = spawnPosition;
         parentObject.parent = blendItemContainer;
         spawnedItem.transform.parent = parentObject.transform;
 
-        Transform dummyCopyLeft = InstantiateDummyCopy(spawnedItem, -backgroundWidth, parentObject, "Left");
-        Transform dummyCopyRight = InstantiateDummyCopy(spawnedItem, backgroundWidth, parentObject, "Right");
+        Transform dummyCopyLeft = InstantiateDummyCopy(spawnedItem.gameObject, -backgroundWidth, parentObject, "Left", typeof(BlendItem));
+        Transform dummyCopyRight = InstantiateDummyCopy(spawnedItem.gameObject, backgroundWidth, parentObject, "Right", typeof(BlendItem));
 
         SceneObjectMovement sceneObjectComponent = spawnedItem.gameObject.AddComponent<SceneObjectMovement>();
         sceneObjectComponent.leftClone = dummyCopyLeft.gameObject;
@@ -75,11 +77,14 @@ public class SceneObjectMovement : MonoBehaviour
         return spawnedItem;
     }
 
-    private static Transform InstantiateDummyCopy(BlendItem fromObject, float xPos, Transform parentObject, string namePrefix)
+    private static Transform InstantiateDummyCopy(GameObject fromObject, float xPos, Transform parentObject, string namePrefix, params Type[] removeComponents)
     {
-        GameObject dummyCopy = Instantiate(fromObject.gameObject, new Vector2(xPos, 0), Quaternion.identity, parentObject);
+        GameObject dummyCopy = Instantiate(fromObject, new Vector2(xPos, 0), Quaternion.identity, parentObject);
         dummyCopy.name = $"{namePrefix} dummy {fromObject.name}";
-        Destroy(dummyCopy.GetComponent<BlendItem>());
+
+        foreach (Type type in removeComponents)
+            Destroy(dummyCopy.GetComponent(type));
+
         Destroy(dummyCopy.GetComponent<Rigidbody2D>());
         return dummyCopy.transform;
     }

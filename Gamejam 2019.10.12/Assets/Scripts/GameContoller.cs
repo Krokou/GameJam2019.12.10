@@ -12,6 +12,7 @@ public class GameContoller : MonoBehaviour
     public BlendItem[] groceries;
     public BlendItem milk;
     public BlendItem weed;
+    public MoneyItem[] moneyItems;
 
     public int points = 0;
     public GameObject customerPrefab;
