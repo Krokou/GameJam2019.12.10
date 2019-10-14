@@ -2,20 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum ItemType
+{
+    NORMAL,
+    MONEY,
+}
+
+[RequireComponent(typeof(Rigidbody2D))]
 public class BlendItem : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public ItemType itemType = ItemType.NORMAL;
+
     public Color blendedColor;
     public float blendIntensity, fillAmmount;
     public bool IsBeingBlended, IsPickedUp;
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

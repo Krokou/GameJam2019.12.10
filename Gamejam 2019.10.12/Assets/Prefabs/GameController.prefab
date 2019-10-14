@@ -47,6 +47,17 @@ MonoBehaviour:
   _2DScene: {fileID: 0}
   background: {fileID: 0}
   blendItemContainer: {fileID: 0}
+  groceries:
+  - {fileID: 3782817741117039032, guid: fe5709925124fda418e53a4e90537653, type: 3}
+  - {fileID: 7539505717735424871, guid: d0d46a658335a094db434422f407ecee, type: 3}
+  - {fileID: 5498022106054902415, guid: ea5a5ef4f6973e244a22879b893c8058, type: 3}
+  - {fileID: 5066115191706401823, guid: e6abf718a2c514941aa49b336386336f, type: 3}
+  - {fileID: 4169647908795117040, guid: 377fae66803b4cc43b4567c1b6145ba5, type: 3}
+  - {fileID: 3619500433920765278, guid: 76ba0d9c256f09c44a728e499d1fd7f3, type: 3}
+  - {fileID: 3774650516124766249, guid: 00b4f532c7b46ba40bb25c2d3ea4eb3e, type: 3}
+  - {fileID: 7615959232147222387, guid: 355930fcee0e54e45ac9c63ed13daf46, type: 3}
+  milk: {fileID: 2099390372722945322, guid: 2dfbcd0d21894234281f163473e38ed9, type: 3}
+  weed: {fileID: 8118133604635246501, guid: 7accf079fe6cf8a46b5ddefef64dde19, type: 3}
   points: 0
   customerPrefab: {fileID: 2027946884911940649, guid: ff806afdb7bbf56419f8cfeebfd2a885,
     type: 3}

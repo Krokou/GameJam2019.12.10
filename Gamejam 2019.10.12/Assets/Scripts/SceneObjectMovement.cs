@@ -52,4 +52,35 @@ public class SceneObjectMovement : MonoBehaviour
         leftClone.transform.position = position + new Vector3(-backgroundWidth, 0, 0);
         rightClone.transform.position = position + new Vector3(backgroundWidth, 0, 0);
     }
+
+    public static BlendItem InstantiateAsSceneObject(BlendItem item, Vector3 spawnPosition)
+    {
+        Transform blendItemContainer = GameContoller.INSTANCE.blendItemContainer;
+        float backgroundWidth = GameContoller.INSTANCE.background.width;
+
+        BlendItem spawnedItem = Instantiate(item, spawnPosition, Quaternion.identity);
+
+        Transform parentObject = new GameObject(item.name).transform;
+        parentObject.position = spawnPosition;
+        parentObject.parent = blendItemContainer;
+        spawnedItem.transform.parent = parentObject.transform;
+
+        Transform dummyCopyLeft = InstantiateDummyCopy(spawnedItem, -backgroundWidth, parentObject, "Left");
+        Transform dummyCopyRight = InstantiateDummyCopy(spawnedItem, backgroundWidth, parentObject, "Right");
+
+        SceneObjectMovement sceneObjectComponent = spawnedItem.gameObject.AddComponent<SceneObjectMovement>();
+        sceneObjectComponent.leftClone = dummyCopyLeft.gameObject;
+        sceneObjectComponent.rightClone = dummyCopyRight.gameObject;
+
+        return spawnedItem;
+    }
+
+    private static Transform InstantiateDummyCopy(BlendItem fromObject, float xPos, Transform parentObject, string namePrefix)
+    {
+        GameObject dummyCopy = Instantiate(fromObject.gameObject, new Vector2(xPos, 0), Quaternion.identity, parentObject);
+        dummyCopy.name = $"{namePrefix} dummy {fromObject.name}";
+        Destroy(dummyCopy.GetComponent<BlendItem>());
+        Destroy(dummyCopy.GetComponent<Rigidbody2D>());
+        return dummyCopy.transform;
+    }
 }

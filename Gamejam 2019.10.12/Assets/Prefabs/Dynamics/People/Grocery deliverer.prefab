@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3144185548207585465}
   - component: {fileID: 2819800209038199091}
   - component: {fileID: 2121612303852362113}
+  - component: {fileID: 2023718815806936332}
   m_Layer: 0
   m_Name: Grocery deliverer
   m_TagString: Untagged
@@ -106,3 +107,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.18, y: 0.64}
   m_EdgeRadius: 0
+--- !u!114 &2023718815806936332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3525308380623836234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8ea166f688db2f4690c32909fb1a4a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deliveryType: 0
+  weedChance: 0.1
+  minSpawnForce: 100
+  maxSpawnForce: 1000

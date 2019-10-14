@@ -9,6 +9,9 @@ public class GameContoller : MonoBehaviour
     public Transform _2DScene;
     public SceneBackground background;
     public Transform blendItemContainer;
+    public BlendItem[] groceries;
+    public BlendItem milk;
+    public BlendItem weed;
 
     public int points = 0;
     public GameObject customerPrefab;
