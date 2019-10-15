@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2027946884911940654}
   - component: {fileID: 2027946884911940655}
   - component: {fileID: 2027946884911940648}
+  - component: {fileID: 416128100064362624}
   m_Layer: 0
   m_Name: kunde
   m_TagString: Untagged
@@ -69,7 +70,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 3cebfcf614027a34bbc8486611395cf8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -97,8 +98,24 @@ MonoBehaviour:
   diffForGood: 20
   diffForPerfect: 10
   controller: {fileID: 0}
-  customerColor: {r: 0.37899333, g: 0.809993, b: 0.006007433, a: 1}
+  customerColor: {r: 0.76556146, g: 0.9675667, b: 0.2555768, a: 1}
   sweater: {fileID: 2027946885910107202}
+  dollar: {fileID: 4995128440779340491, guid: d29dba42400d75242bc4b271a7606bb7, type: 3}
+  gold: {fileID: 2118078204859462035, guid: 6f2069dd5cc3b0a47a98a1bfae8fe7ec, type: 3}
+  silver: {fileID: 5441787559154382617, guid: 795c643ffc1f8c649826c57357a4d949, type: 3}
+  poop: {fileID: 2277247609840625411, guid: 005e906d460ce5041af72429fb8d9935, type: 3}
+--- !u!114 &416128100064362624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2027946884911940649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6c1012e4af4a4e4bb90c619496464be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2027946885910107203
 GameObject:
   m_ObjectHideFlags: 0

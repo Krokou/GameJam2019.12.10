@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 714575536942458082}
   - component: {fileID: 4476509778390274009}
   - component: {fileID: 6539418377481192787}
+  - component: {fileID: 4975814794458312592}
   m_Layer: 0
   m_Name: konfyr
   m_TagString: Untagged
@@ -68,7 +69,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: a09adf4a562bd464a86f039c16f31e62, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -106,3 +107,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.65, y: 0.12}
   m_EdgeRadius: 0
+--- !u!114 &4975814794458312592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8042484790266330458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6c1012e4af4a4e4bb90c619496464be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

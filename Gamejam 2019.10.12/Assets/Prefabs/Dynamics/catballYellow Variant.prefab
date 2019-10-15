@@ -14,6 +14,41 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8195097658478097861, guid: 584b9066c2665314497b3e05587fc73e,
         type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8195097658478097861, guid: 584b9066c2665314497b3e05587fc73e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8195097658478097861, guid: 584b9066c2665314497b3e05587fc73e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8195097658478097861, guid: 584b9066c2665314497b3e05587fc73e,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8195097658478097861, guid: 584b9066c2665314497b3e05587fc73e,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8195097658478097861, guid: 584b9066c2665314497b3e05587fc73e,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8195097658478097861, guid: 584b9066c2665314497b3e05587fc73e,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8195097658478097861, guid: 584b9066c2665314497b3e05587fc73e,
+        type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
@@ -38,5 +73,15 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: fc1ee5b001b5aac449571dc58cc85b64,
         type: 3}
+    - target: {fileID: 22246424537444403, guid: 584b9066c2665314497b3e05587fc73e,
+        type: 3}
+      propertyPath: blendedColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 22246424537444403, guid: 584b9066c2665314497b3e05587fc73e,
+        type: 3}
+      propertyPath: blendedColor.g
+      value: 0.8816934
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 584b9066c2665314497b3e05587fc73e, type: 3}

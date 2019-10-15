@@ -1,11 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameContoller : MonoBehaviour
 {
     public static GameContoller INSTANCE;
 
+    public Text text;
+
+    public AudioClip Ratsong;
+    public AudioClip Smoothies;
+    public GameObject rat;
+
+    public Transform _2DCamera;
     public Transform _2DScene;
     public SceneBackground background;
     public Transform blendItemContainer;
@@ -35,12 +43,22 @@ public class GameContoller : MonoBehaviour
             Debug.LogWarning("There's more than one GameContoller in the scene!");
             Destroy(gameObject);
         }
+        
     }
 
     void Start()
     {
+        Cursor.visible = false;
         makeNewCustomer();
         timeStart = Time.time;
+        GetComponent<AudioSource>().clip = Smoothies;
+        GetComponent<AudioSource>().Play();
+        GetComponent<AudioSource>().loop = true;
+    }
+
+    private void Update()
+    {
+        text.text = "Score: " + points;
     }
 
     private void FixedUpdate()
@@ -64,11 +82,6 @@ public class GameContoller : MonoBehaviour
 
     public void makeNewCustomer() {
 
-        if (customers.Count == 10)
-        {
-            GameOver();
-        }
-
         lastSpawn = Time.time;
         
 
@@ -81,7 +94,12 @@ public class GameContoller : MonoBehaviour
         //print(spawnPoint);
         CustomerController newCust = Instantiate(customerPrefab, spawnPoint + (lineIncrements * customers.Count), transform.rotation).GetComponent<CustomerController>();
         customers.Add(newCust);
-        
+
+        if (customers.Count == 10)
+        {
+            GameOver();
+            lastSpawn = Time.time + 10000;
+        }
     }
 
     public void customerLeave(CustomerController cust)
@@ -124,7 +142,15 @@ public class GameContoller : MonoBehaviour
     public void GameOver()
     {
         print("Game Over");
+        GetComponent<AudioSource>().clip = Ratsong;
         GetComponent<AudioSource>().Play();
+        GameObject[] go = GameObject.FindGameObjectsWithTag("Blendable");
+        foreach (GameObject g in go)
+        {
+            GameObject obj = g;
+            Instantiate(rat, obj.transform.position, obj.transform.rotation);
+            Destroy(obj);
+        }
     }
 }
 

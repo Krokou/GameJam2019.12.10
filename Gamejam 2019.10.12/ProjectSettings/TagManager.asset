@@ -7,6 +7,7 @@ TagManager:
   - rightTrigger
   - leftTrigger
   - Lid
+  - Blendable
   layers:
   - Default
   - TransparentFX

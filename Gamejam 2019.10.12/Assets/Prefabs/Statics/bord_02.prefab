@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 9022979653628154824}
   - component: {fileID: 8231841275962743404}
   - component: {fileID: 48524099284364455}
+  - component: {fileID: 1495455797559842962}
   m_Layer: 0
   m_Name: bord_02
   m_TagString: Untagged
@@ -68,7 +69,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 40dc9d03276f162449d283543b6e6a25, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -106,3 +107,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.52, y: 0.1}
   m_EdgeRadius: 0
+--- !u!114 &1495455797559842962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4459753331273561795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6c1012e4af4a4e4bb90c619496464be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

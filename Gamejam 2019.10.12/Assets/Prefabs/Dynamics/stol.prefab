@@ -16,6 +16,8 @@ GameObject:
   - component: {fileID: 8032584296966156847}
   - component: {fileID: 1248246150514650795}
   - component: {fileID: 6365383538426396311}
+  - component: {fileID: 3544254902471959177}
+  - component: {fileID: 4974907500801233085}
   m_Layer: 0
   m_Name: stol
   m_TagString: Untagged
@@ -73,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: a376e3a41341098459b121096798301e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -222,8 +224,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bae402f92d6290a4d809c82322269a03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blendedColor: {r: 0, g: 0, b: 0, a: 0}
-  blendIntensity: 0
-  fillAmmount: 0
+  itemType: 0
+  blendedColor: {r: 0.6226415, g: 0.24696769, b: 0, a: 0}
+  blendIntensity: 5
+  fillAmmount: 60
   IsBeingBlended: 0
   IsPickedUp: 0
+--- !u!114 &3544254902471959177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2462956402473067314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ea71508ce7627a4a94f38fa10c6cf4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftClone: {fileID: 0}
+  rightClone: {fileID: 0}
+  sprite: {fileID: 0}
+--- !u!114 &4974907500801233085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2462956402473067314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6c1012e4af4a4e4bb90c619496464be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5829522798351978816}
   - component: {fileID: 489621487311486300}
   - component: {fileID: 528249598164000077}
+  - component: {fileID: 1999044894120291873}
   m_Layer: 0
   m_Name: milkman
   m_TagString: Untagged
@@ -27,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5934347519761221458}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 32.5, y: 8.189432, z: 17}
   m_LocalScale: {x: 9.9258, y: 9.9258, z: 9.9258}
   m_Children: []
   m_Father: {fileID: 0}
@@ -69,7 +70,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 1176ecc8d20737a4597923a02dcd1484, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -123,3 +124,15 @@ MonoBehaviour:
   weedChance: 0.1
   minSpawnForce: 100
   maxSpawnForce: 1000
+--- !u!114 &1999044894120291873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5934347519761221458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6c1012e4af4a4e4bb90c619496464be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

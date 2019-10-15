@@ -14,9 +14,11 @@ GameObject:
   - component: {fileID: 9027285166354111573}
   - component: {fileID: 9189104519190693265}
   - component: {fileID: 8857351890593900117}
+  - component: {fileID: 7599486475163765403}
+  - component: {fileID: 676852430083826171}
   m_Layer: 0
   m_Name: silverCoin
-  m_TagString: Untagged
+  m_TagString: Blendable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71,7 +73,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: a91def736a2b4ab42bd31b852118a8f5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -133,9 +135,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemType: 1
-  blendedColor: {r: 0, g: 0, b: 0, a: 0}
-  blendIntensity: 0
-  fillAmmount: 0
+  blendedColor: {r: 0.8862746, g: 0.8862746, b: 0.8862746, a: 1}
+  blendIntensity: 5
+  fillAmmount: 10
   IsBeingBlended: 0
   IsPickedUp: 0
 --- !u!114 &8857351890593900117
@@ -151,3 +153,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numItemsValue: 1
+--- !u!114 &7599486475163765403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5441787559154382617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ea71508ce7627a4a94f38fa10c6cf4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftClone: {fileID: 0}
+  rightClone: {fileID: 0}
+  sprite: {fileID: 0}
+--- !u!114 &676852430083826171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5441787559154382617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6c1012e4af4a4e4bb90c619496464be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

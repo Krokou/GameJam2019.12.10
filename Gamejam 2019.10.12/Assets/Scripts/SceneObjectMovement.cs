@@ -9,32 +9,28 @@ public class SceneObjectMovement : MonoBehaviour
     public GameObject leftClone;
     public GameObject rightClone;
 
+    public Sprite sprite;
+
     private Transform container;
     private float backgroundWidth;
-
-    private Rigidbody2D rb;
-
-    private int deltaTime = 0;
 
     void Start()
     {
         container = GameContoller.INSTANCE._2DScene.transform;
         backgroundWidth = GameContoller.INSTANCE.background.width;
+        sprite = GetComponent<SpriteRenderer>().sprite;
 
-        rb = GetComponent<Rigidbody2D>();
-        rb.AddForce(new Vector2(Random.Range(-1000.0f, 1000.0f), 0.0f));
+        leftClone = InstantiateDummy(sprite);
+        rightClone = InstantiateDummy(sprite);
+    }
+
+    private void Update()
+    {
+        
     }
 
     void FixedUpdate()
     {
-        deltaTime += 1;
-
-        if (deltaTime >= 100)
-        {
-            rb.AddForce(new Vector2(Random.Range(-1000.0f, 1000.0f), Random.Range(-50.0f, 500.0f)));
-            deltaTime = 0;
-        }
-
         float backgroundLeftEdgeX = -backgroundWidth / 2 + container.position.x;
         float backgroundRightEdgeX = backgroundWidth / 2 + container.position.x;
         if (transform.position.x < backgroundLeftEdgeX)
@@ -55,7 +51,13 @@ public class SceneObjectMovement : MonoBehaviour
         rightClone.transform.position = position + new Vector3(backgroundWidth, 0, 0);
     }
 
-    public static T InstantiateAsSceneObject<T>(T item, Vector3 spawnPosition) where T : MonoBehaviour
+    private void OnDestroy()
+    {
+        Destroy(leftClone);
+        Destroy(rightClone);
+    }
+
+    /*public static T InstantiateAsSceneObject<T>(T item, Vector3 spawnPosition) where T : MonoBehaviour
     {
         Transform blendItemContainer = GameContoller.INSTANCE.blendItemContainer;
         float backgroundWidth = GameContoller.INSTANCE.background.width;
@@ -87,5 +89,19 @@ public class SceneObjectMovement : MonoBehaviour
 
         Destroy(dummyCopy.GetComponent<Rigidbody2D>());
         return dummyCopy.transform;
+    }*/
+
+    private GameObject InstantiateDummy(Sprite s)
+    {
+        GameObject g = new GameObject();
+        g.AddComponent<SpriteRenderer>();
+        g.GetComponent<SpriteRenderer>().sprite = s;
+        g.GetComponent<SpriteRenderer>().sortingOrder = 4;
+        g.SetActive(true);
+        g.transform.localScale = transform.localScale;
+        g.AddComponent<HideRenderer>();
+        
+
+        return g;
     }
 }

@@ -10,6 +10,7 @@ public class handController : MonoBehaviour
     public Sprite sprite2;
 
     public float cameraSpeed = 0.2f;
+    public float pullStrength = 30;
 
     public Transform pivot;
 
@@ -67,7 +68,7 @@ public class handController : MonoBehaviour
                 }
                 else
                 {
-                    rb.AddForce(new Vector2(pivot.position.x - rb.position.x, pivot.position.y - rb.position.y) * 20);
+                    rb.AddForce(new Vector2(pivot.position.x - rb.position.x, pivot.position.y - rb.position.y) * pullStrength);
                 }
             }
         }
@@ -134,7 +135,7 @@ public class handController : MonoBehaviour
 
         Vector2 distance = new Vector2(rigidbody.position.x - pivot.position.x, rigidbody.position.y - pivot.position.y);
         float disLen = Mathf.Sqrt(Mathf.Pow(distance.x, 2) + Mathf.Pow(distance.y, 2));
-        if (disLen > 4) result = false;
+        if (disLen > 6) result = false;
 
         return result;
     }

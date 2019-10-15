@@ -14,9 +14,11 @@ GameObject:
   - component: {fileID: 1900939224199998841}
   - component: {fileID: 6200019699468616206}
   - component: {fileID: 3512018577955826027}
+  - component: {fileID: 4575141242476881714}
+  - component: {fileID: 1142510843191258837}
   m_Layer: 0
   m_Name: maurBlack_02
-  m_TagString: Untagged
+  m_TagString: Blendable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71,7 +73,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: d9c62114fbb9c5e439431d79f4edd632, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -151,8 +153,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bae402f92d6290a4d809c82322269a03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemType: 0
   blendedColor: {r: 0, g: 0, b: 0, a: 0}
-  blendIntensity: 0
-  fillAmmount: 0
+  blendIntensity: 4
+  fillAmmount: 10
   IsBeingBlended: 0
   IsPickedUp: 0
+--- !u!114 &4575141242476881714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1900939224199998840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ea71508ce7627a4a94f38fa10c6cf4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftClone: {fileID: 0}
+  rightClone: {fileID: 0}
+  sprite: {fileID: 0}
+--- !u!114 &1142510843191258837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1900939224199998840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6c1012e4af4a4e4bb90c619496464be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

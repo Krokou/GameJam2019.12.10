@@ -14,6 +14,9 @@ public class Deliverer : MonoBehaviour
 {
     public DeliveryType deliveryType;
 
+    public float spawnTime;
+    public float lifeSpan = 5;
+
     public float weedChance = 0.1f;
     public float minSpawnForce = 100f;
     public float maxSpawnForce = 1000f;
@@ -23,6 +26,15 @@ public class Deliverer : MonoBehaviour
     void Start()
     {
         blendItemContainer = GameContoller.INSTANCE.blendItemContainer;
+        spawnTime = Time.time;
+    }
+
+    private void Update()
+    {
+        if (spawnTime + lifeSpan <= Time.time)
+        {
+            Destroy(gameObject);
+        }
     }
 
     void OnTriggerEnter2D(Collider2D col)
@@ -30,7 +42,7 @@ public class Deliverer : MonoBehaviour
         BlendItem blendItem = col.GetComponent<BlendItem>();
         if (blendItem != null && blendItem.itemType == ItemType.MONEY)
         {
-            int numItemsValue = blendItem.GetComponent<MoneyItem>().numItemsValue;
+            int numItemsValue = col.GetComponent<MoneyItem>().numItemsValue;
 
             BlendItem[] itemsToSpawn;
             switch (deliveryType)
@@ -52,10 +64,11 @@ public class Deliverer : MonoBehaviour
 
             foreach (BlendItem item in itemsToSpawn)
             {
-                Rigidbody2D spawnedItem = SceneObjectMovement.InstantiateAsSceneObject(item, blendItem.transform.position).GetComponent<Rigidbody2D>();
+                Rigidbody2D spawnedItem = Instantiate(item.gameObject, transform.position, Quaternion.identity).GetComponent<Rigidbody2D>();
                 spawnedItem.AddForce(Utils.RandomVector(minSpawnForce, maxSpawnForce));
             }
 
+            GameObject.Find("rightHand").GetComponent<handController>().Release();
             Destroy(blendItem.gameObject);
         }
     }

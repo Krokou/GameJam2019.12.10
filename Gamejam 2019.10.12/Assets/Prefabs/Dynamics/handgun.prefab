@@ -59,9 +59,11 @@ GameObject:
   - component: {fileID: 4819036170024710130}
   - component: {fileID: 4819036170024710141}
   - component: {fileID: 2945443352740885558}
+  - component: {fileID: 4314937366345158196}
+  - component: {fileID: 1098576616800690878}
   m_Layer: 0
   m_Name: handgun
-  m_TagString: Untagged
+  m_TagString: Blendable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -118,7 +120,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: d2ff71285e938454685e5b23423988eb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -163,11 +165,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bae402f92d6290a4d809c82322269a03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemType: 0
   blendedColor: {r: 0, g: 0, b: 0, a: 0}
-  blendIntensity: 0
-  fillAmmount: 0
+  blendIntensity: 5
+  fillAmmount: 20
   IsBeingBlended: 0
   IsPickedUp: 0
+--- !u!114 &4314937366345158196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4819036170024710140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ea71508ce7627a4a94f38fa10c6cf4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftClone: {fileID: 0}
+  rightClone: {fileID: 0}
+  sprite: {fileID: 0}
+--- !u!114 &1098576616800690878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4819036170024710140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6c1012e4af4a4e4bb90c619496464be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4819036170864997086
 GameObject:
   m_ObjectHideFlags: 0

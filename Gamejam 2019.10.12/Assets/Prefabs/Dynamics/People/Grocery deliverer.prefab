@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2819800209038199091}
   - component: {fileID: 2121612303852362113}
   - component: {fileID: 2023718815806936332}
+  - component: {fileID: 1235808382243729261}
   m_Layer: 0
   m_Name: Grocery deliverer
   m_TagString: Untagged
@@ -69,7 +70,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 4cbd6d6f6e6501b41b9759b7e834c643, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -122,4 +123,16 @@ MonoBehaviour:
   deliveryType: 0
   weedChance: 0.1
   minSpawnForce: 100
-  maxSpawnForce: 1000
+  maxSpawnForce: 500
+--- !u!114 &1235808382243729261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3525308380623836234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6c1012e4af4a4e4bb90c619496464be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
